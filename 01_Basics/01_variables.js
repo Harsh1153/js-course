@@ -12,4 +12,8 @@ customerEmail= "hdfc@gmail.com"
 customerPass = "2222"
 customerCity = "vashi"
 
+/*
+Prefer not to use var 
+Because of issues in block scope and functional scope
+*/
 console.table([customerEmail, customerPass,customerCity,customerId])
