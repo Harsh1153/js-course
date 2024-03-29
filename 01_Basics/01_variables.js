@@ -12,4 +12,4 @@ customerEmail= "hdfc@gmail.com"
 customerPass = "2222"
 customerCity = "vashi"
 
-console.table([customerEmail, customerPass,customerCity])
+console.table([customerEmail, customerPass,customerCity,customerId])
