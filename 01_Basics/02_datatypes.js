@@ -27,3 +27,30 @@ console.log(typeof null) // object
 console.log(typeof undefined) // undefined
 
 
+// Two data types : Primitive and Non Primitive(Reference type) 
+
+//******************* Reference type *******************
+
+// stack (primitive): stack ke andar koi bhi ek chiz lege uska copy milta hai  , Heap (Non-primitive):heap me reference milta hai that is original value
+
+// Example of Stack:
+let myName = "harsh"
+
+let petName = myName
+petName = "harry"
+
+console.log(myName);
+console.log(petName);
+
+// Example of Heap:
+let user1 ={
+    email: "user@google.com",
+    upi: "user@ybl"
+
+}
+
+let user2 = user1
+user2.email= "harsh@google.com"
+
+console.log(user1.email);
+console.log(user2.email);
