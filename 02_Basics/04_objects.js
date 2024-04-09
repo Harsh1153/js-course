@@ -69,3 +69,43 @@ console.log(tinderUser1.hasOwnProperty('isLoggedIN'));
 // hasOwnProperty
 // Determines whether an object has a property with the specified name.
 
+
+
+// Destructing of Objects:- like in React will get an object we have to destructure it an give the value of it
+
+const course = {
+    coursename: "javaScript",
+    price: 1000,
+    courseinstructor: "Harsh"
+}
+
+// now we access the objects :-
+//console.log(course.courseinstructor); // this is basic way 
+
+// Another Way of Destructor is:
+const {courseinstructor : instructor} = course // in this we have also change the name to instructor
+console.log(instructor);
+
+// how the above destructing use in "REACT"
+// const navbar = ({company}) => { // so we dont write props.company in react we simply write inside '{}'
+// }
+// navbar (company = "harsh")
+
+// whenever object is written inside {} that means destructing is done.
+
+
+//****************** API *******************************
+
+// jabhi aapko apna kaam kisi aur ke sir pr dalna hai usko API bolte hai 
+// pehle API ki values xml me aati thi abhi JSON me aati hai json se api call hoti hai
+{
+    "name": "harsh",
+    "coursename": "javaScript",
+    "price":"free"
+}
+// JSON are also written in [ ] arrays format
+[
+    {},
+    {},
+    {}
+]
