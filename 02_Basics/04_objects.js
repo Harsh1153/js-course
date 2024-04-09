@@ -98,11 +98,11 @@ console.log(instructor);
 
 // jabhi aapko apna kaam kisi aur ke sir pr dalna hai usko API bolte hai 
 // pehle API ki values xml me aati thi abhi JSON me aati hai json se api call hoti hai
-{
-    "name": "harsh",
-    "coursename": "javaScript",
-    "price":"free"
-}
+// {
+//     "name": "harsh",
+//     "coursename": "javaScript",
+//     "price":"free"
+// }
 // JSON are also written in [ ] arrays format
 [
     {},
