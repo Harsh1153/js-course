@@ -28,3 +28,18 @@ const balance = 1000
 // it includes if-else nesting which includes examples like temp check, balance check, etc.
 
 // let us see some real life example of NESTING:-
+const userLoggedIn = true
+const debitCard = true
+
+if (userLoggedIn && debitCard){
+    console.log(`Allow for the shopping`);
+}
+// THE ABOVE CONDITION WAS ABOUT && OPERATION
+
+const loggedInFromGoogle = true
+const loggedInFromEmail = true
+
+if(loggedInFromEmail || loggedInFromGoogle){
+    console.log(`User Logged In`);
+}
+
