@@ -30,3 +30,5 @@ switch (month) {
         break;
 }
 
+// Value koi bhi ho sakti hai string , int, etc just match with the CASE.
+
