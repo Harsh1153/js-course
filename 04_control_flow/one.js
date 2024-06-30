@@ -10,6 +10,7 @@ if (temp === 32){
 }
 console.log(`if-else executed`);
 
+// to check the condition we use <, >,<=, >=, ==, ===, !=, !== 
 // lets see scope of variables there is two type of scope: 1) global scope and 2)block scope.
 const score =200
 if (score > 100){
