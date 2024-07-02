@@ -9,7 +9,8 @@ const values = coding.forEach( (item) => {
 // the above line of code tells us that if you store for-each loop in const variable and try to return any value that is item it will not retuen anything that is "undefined".
 
 // filter operation:- filter bhi apne andar call back function leta hai.
-// Reason to use filter operation is for-each aapko value return nahi karta, "so value return karni hai toh will make use of filter."
+// Reason to use filter operation is for-each aapko value return nahi karta, "so value return karni hai toh will make use of filter." 
+// Filter me true or false rahega toh execute hoga i.e return hoga.
 
 const nums = [1,2,3,4,5,6,7,8,9,10]
 
