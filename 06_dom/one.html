@@ -1,7 +1,21 @@
 <!-- document object model -->
  <!-- console.log(document) object hai aur console.log(dir) -->
+
   <!--DOM manipulation is nothing but we can change the content of the web page that is also called as page manipulation-->
-  <!--node list rahegi toh for-each loop use karo , node list looks like array but it is not proper array.-->
+
+  <!--node list rahegi toh for-each loop use karo , node list looks like array but it is not proper array. but agar map ya baki functions lagane hai toh convert that node list to array then use baki functions. -->
+
+  <!--HTMLCollection is different from nodelist -->
+
+  <!-- To convert HTMLCollection to array write Array.from(nameofvariable_containing_HTMLCollection) -->
+
+   <!-- So Remember if you want to change the values or to modify the web page then make use of "queryselector" there are two types of it and also we can use class ,then we can use HTMColeection to modify the values using for-each, map , etc by converting it to array first and how to convert it to array is given above -->
+
+<!-- we can access the each tag or attribute by writing it as document.querySelectorAll('h2) and then allH2[0].innerText but before doing this store it in const variable_name -->
+
+ <!-- to access class we write it as document.querySelectorAll('.class_name')-->
+
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
