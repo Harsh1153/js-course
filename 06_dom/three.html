@@ -1,0 +1,36 @@
+<!-- How to create Node List Programmatically? -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code</title>
+ </head>
+ <body style="background: #212121; color: #fff;">
+    
+ </body>
+ <script>
+    // how to create div element? or any element
+    const divEle = document.createElement('div')
+    console.log(divEle);
+
+    // Sometimes you have to add properties like className, id ,etc and harr ek element nodelist apneaap me like class , id n all conataining all values. So how to set values in created div element:-
+    divEle.className = "main"
+    divEle.id = Math.round(Math.random() *10 +1)  // it will assign random id number.
+
+    // if you want set custom attributes the method used is:-
+    divEle.setAttribute("title", "Hello")
+    divEle.style.padding = "15px"
+    divEle.style.fontSize = "100px"
+    divEle.style.backgroundColor= "gray"
+    // divEle.innerHTML="chai aur code" // we have optimized some text. and in this way of using this method that overrides but the above setAttribute method directly changes the value or assigns. Another way is given below:-
+    const addText = document.createTextNode("Chai aur Code")
+    divEle.appendChild(addText) // ye line text ko div ke andar add kar rahi hai using append method.
+
+    // IMP- till now all the methods we added are stored in memmory jab hum bolege ki ye file ko attach karo tabhi main page pr hume voh modifications dikhege.for that see below code how to attach:-
+    document.body.appendChild(divEle)
+
+    // Now as we have created this div element we can amke one Function and add this div in it and apply any functions like for loop and all.
+
+ </script>
+ </html>

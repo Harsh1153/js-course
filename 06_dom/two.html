@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur Code</title>
+</head>
+<body style="background-color: #212121 ; color: #fff;">
+    <div class="parent">
+        <!--this is comment-->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    // to access parent element above declared.
+    const parent = document.querySelector('.parent')
+    //console.log(parent);
+    //console.log(parent.children[2].innerHTML);
+
+    // we can also apply for loop :- another way to print above statement.
+    for (let i = 0; i < parent.children.length; i++) {
+        //console.log(parent.children[i].innerHTML);
+        
+    }
+
+    // we can also do styling as given below:-
+    //parent.children[0].style.color = "orange"
+
+    // we can also access first element and the property is important and will be used many times:-
+    // console.log(parent.firstElementChild);
+
+    // we can also access last element as we have access parent and want to access last or first element we can use:-
+    // console.log(parent.lastElementChild);
+
+    // the above firstElementChild and lastElementChild property are helping us in moving parent to childe there is a property who helps in moving from child to parent:-
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne);
+    //NOW
+    // console.log(dayOne.parentElement);
+    // if you want to access next element that is sibling of previous element:-
+   // console.log(dayOne.nextElementSibling);
+    // the above functioning is called as TRAVERSING that is parent to child, child to sibling.
+
+    //NODELIST:-
+    
+    console.log("NODES :", parent.childNodes);
+
+</script>
+</html>
