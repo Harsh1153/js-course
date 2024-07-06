@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code</title>
+</head>
+<body style="background: #212121; color: #fff; font-size: 50px; padding: 10px;">
+    
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    
+</body>
+<script>
+    // we will be designing a new function add the above languagename in it 
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('Python')
+    // In this above method we created element of name li then we inserted textnode in it and for big project dont go for innerHTML go for appendChild method.
+
+    // ANOTHERWAY is:- But which is not optimize!
+    function addLang(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang("Java")
+    addLang("C++")
+    // this is not a optimize method where tree traverse happens and takes more time when there is large number of variables present.
+
+    // Edit:-
+    const thirdLang = document.querySelector("li:nth-child(3)")
+    // easy way that is only single value present then use:-
+    //thirdLang.innerHTML = "Mojo"
+    const newLi = document.createElement('li')
+    newLi.textContent = "GoLang"
+    //another way is:- where first we created new element then replce it.
+     thirdLang.replaceWith(newLi)
+
+     // Edit:- Anotherway to edit elements in li
+     const firstLang = document.querySelector("li:first-child")
+     firstLang.outerHTML = '<li>TypeScript</li>'
+
+     // Remove:-
+     const lastLang = document.querySelector('li:last-child')
+     lastLang.remove()
+</script>
+</html>
