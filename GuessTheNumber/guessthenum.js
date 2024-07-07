@@ -1,5 +1,5 @@
 // Lets first:- Generate Random Number.
-const randonNumber = parseInt(Math.random()*100 + 1)
+let randonNumber = parseInt(Math.random()*100 + 1)
 // action submit hogi:
 const submit = document.querySelector('#subt')
 //user ka input:-
@@ -56,28 +56,63 @@ function validateGuess(guess){
             displayGuess(guess)
             // now will check was the guess right/
             checkGuess(guess)
-            
+
         }
     }
 }
 
 function checkGuess(guess) {
-    //
+    // yaha hum check karege ki kya guess kiya hu aa number randomNumber hai kya?
+    if (guess === randonNumber) {
+        displayMessage(`You Guessed it right`)
+        endGame()
+    } else if(guess < randonNumber){
+        displayMessage(`Number is too low`)
+    }else if (guess > randonNumber) {
+        displayMessage(`Number is too high`)
+    }
 }
 
 function displayGuess(guess) {
-    //
+    // yaha hum jo user se value lenge usko update karege with empty string
+    userInput.value = ''  // also we cam say it as cleanup method.
+    guessSlot.innerHTML += `${guess}   ` // yaha guess push hoga not update
+    numGuess++
+    remaining.innerHTML = `${11 - numGuess}`
 }
 
 function displayMessage(message) {
     //this method will work with DOM
+    lowOrHi.innerHTML = `<h2>${message}</h2>`
 }
 
 function endGame(){
-    //
+    //game end karneke liye button banana hoga:
+    userInput.value = ''
+    // clean karneke baad aur values add na kar paye:
+    userInput.setAttribute('disabled', '')
+    p.classList.add('button')
+    p.innerHTML = `<h2 id="newGame">Start New Game</h2>`
+    startOver.appendChild(p)
+    playGame = false
+    newGame()
 }
 
 function newGame(){
-    //
+    // yaha pehle hum end game jo button banaya hai uska reference lenge:-
+    const newGameButton = document.querySelector('#newGame')
+    newGameButton.addEventListener('click', function(e){
+        // Now first Reset all the variables:-
+        randonNumber = parseInt(Math.random()*100 + 1)
+        // yaha pr niche empty array deke values reset karli:-
+        prevGuess = []
+        numGuess = 1
+        guessSlot.innerHTML = ''
+        remaining.innerHTML = `${11 - numGuess}`
+        userInput.removeAttribute('disabled')
+        startOver.removeChild(p)
+        // now again from start the game will begin:-
+        playGame = true
+    })
 }
 
