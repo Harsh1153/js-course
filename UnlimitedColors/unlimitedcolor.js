@@ -1,4 +1,4 @@
-// This Project is part Of Asynch Code:-
+// This Project is part Of Asynch Code:- Asyn me jaruri nahi hai web page ko request bhej na. Js asynch hai kyu ki it contains API with it and asynch hai js kyu ki ek he thread pe chalta hai.
 // Generate a random color:- jo hoga hex value se
 const randomColor = function(){
     const hex = "0123456789ABCDEF"
