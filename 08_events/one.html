@@ -22,5 +22,80 @@
     // JavaScript me jitne bhi Events hote hai voh sab sequentially he run hote hai , kuch exceptions hai that will see now but js is sequentially run lang hai. 
 
     // Also these exceptional Events only invoke when an specific activity runs.
+
+        // Events to remember:-
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY - ye sab event client ke position relted hai.
+    // altkey, ctrlkey, shiftkey, keyCode - ye sab event keyboard activities related hai.
+
+    // Ways of using onlick function:- first is common by using onclick function using getElementById and another one is addEventListner:-
+    //document.getElementById('owl').onclick = function(){
+    //    alert("owl clicked")
+    //}
+    
+    // attachEvent(), jQuery - on
+
+    // Best Apporaches:-
+    // document.getElementById('owl').addEventListener('click',function(){
+     //   alert('owl clicked')
+    //}) 
+    // isme addEventListener me 3 parameter true or false ho sakta hai jaha uske bina kahi baar applications run nahi hote.
+
+   // document.getElementById('images').addEventListener('click', function(e){
+   //     console.log("Clicked inside the ul")
+   // }, false) 
+    // in the above method will mostly get browser events like mouse ne kaha pr click kiya , mouse kaha pr hai, etc.
+    // Now will see whats Event Propogation? In which two things happens that is false is:-EventBubbling and true is:-EventCapturing.
+    // bubbling kya hota hai jaha hum niche se upar jate hai like pehle humne inner element pr click kiya then voh li pr gaya then ul that is how bubbling works and it is called as event propogation and also known as event bubbling.
+   // document.getElementById('owl').addEventListener('click', function(e){
+      //  console.log("owl clicked")
+  //  }, false)
+
+
+    // capturing:- it goes from top to bottom.    
+  //  document.getElementById('images').addEventListener('click', function(e){
+   //     console.log("clicked inside the ul")
+   // }, true)
+    //document.getElementById('owl').addEventListener('click', function(e){
+      //  console.log("owl clicked")
+   // }, true)
+
+    // bubling and capturing depends on the usecase.
+
+    // To stop the element to move towards top :-
+   // document.getElementById('owl').addEventListener('click', function(e){
+   //     console.log("owl clicked")
+   //     e.stopPropagation()
+   // }, false)
+
+    // How to stop propogation:-
+   // document.getElementById('google').addEventListener('click', function(e){
+    //    e.preventDefault()
+    //    e.stopPropagation()
+    //    console.log(`Google clicked`)
+    // })
+
+    // Activity:-
+
+    //document.querySelector('#images').addEventListener('click', (e) => {
+    //    console.log(e.target.parentNode) // here i am getting from which target the event is occuring.
+    //    let removeIt = e.target.parentNode
+    //    removeIt.remove()
+   //  })
+
+    // now as we clicked on google all the IMG are removed to avoid that we go with specific tagname so that by clicking on parent element it will not remove everything present under it only child nodes will be removed:-
+    document.querySelector('#images').addEventListener('click', (e) => {
+        console.log(e.target.tagName)
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+
+
+
+
 </script>
 </html>
