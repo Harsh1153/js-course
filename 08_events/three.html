@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur javaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(str){
+        console.log( str , Date.now())
+    }
+    //setInterval(sayDate, 1000 , "Hi")
+   let inter
+  const start = document.querySelector('#start').addEventListener('click', function(){
+      inter = setInterval(sayDate, 1000 , "Hi")
+   })
+    // Now the setINterval method will keep running to stop it we have below method:-
+   // const intervalId = setInterval(sayDate, 5000 , "Hi")
+   // clearInterval(intervalId)
+
+   // Using Stop Button that is using event will stop the Text Ocuuring in console.
+   const stop = document.querySelector('#stop').addEventListener('click', function(){
+    clearInterval(inter)
+  })
+
+    
+</script>
+</html>
