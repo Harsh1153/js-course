@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+   // setTimeout(function(){
+    //    console.log("Harsh")
+   // }, 5000) 
+    // Basically above setTimeout is a method in which handler is a call back without name and it also requires timer. Hence it act like ki ek function hoga voh timeout ke baad.
+
+    // setTimeout is used in many usecases like web site pr kuch seconds baad offers ka pop up aana chaiye , etc 
+
+    // Another way for above method :-
+    const sayHarsh = function(){
+        console.log("Harsh")
+    }
+    // Now will change the name of the <h1> tag:- But That text should occur after two seconds.
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Best js Series"
+    }
+    //setTimeout(changeText, 5000)
+    
+    // Now as we have set timeout will also nedd to remove this timeout after some time for that the below method is used on an Event:-
+    const ChangeMe = setTimeout(changeText, 2000)
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(ChangeMe)
+        console.log("STOPPED")
+     })
+</script>
+</html>
