@@ -11,6 +11,7 @@
         <div class="container">
           <h4>John Doe</h4>
           <p>Architect & Engineer</p>
+          <button id="click" style="font-size: 20px;">Click</button>
         </div>
       </div>
       <style>
@@ -25,28 +26,13 @@
             padding: 2px 16px;
           }
           </style>
+          
 </body>
 <script>
    // document.querySelector(".card img").setAttribute("src" , `${data.avatar_url}`);
 // document.querySelector("h4").innerHTML = `${data.name} , Followers : ${data.followers}`;
 // document.querySelector("h4").style.fontWeight = `bold`;
 // document.querySelector("p").innerHTML = `${data.bio}  ${data.blog}`
-
-const  requestUrl = 'https://api.github.com/users/hiteshchoudhary'
-const xhr = new XMLHttpRequest()
-xhr.open('GET', requestUrl)
-xhr.onreadystatechange = function(){
-    console.log(xhr.readyState)
-
-    if(xhr.readyState === 4){
-        const specificData = JSON.parse(this.responseText)
-        console.log(typeof specificData)
-            console.log(specificData.followers)
-            console.log(this.responseText)
-        }
-    }
-    xhr.send()
-
 
 </script>
 </html>
