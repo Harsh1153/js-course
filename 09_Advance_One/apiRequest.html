@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body style="background-color: rgb(74, 73, 73);">
+    0	UNSENT	Client has been created. open() not called yet.
+    1 OPENED	open() has been called.
+    2 HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3 LOADING Downloading; responseText holds partial data.
+    4 DONE The operation is complete.
+</body>
+<script>
+    // xmlhttpRequest ek method hai jise hum data request send kar sakte hai which contains all the ready states and also we can receive the request.
+
+    const  requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl) //open methid contains method and string. and ye 1 state hai 
+
+    // To Track the states:-
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState) // now this will show us that how states changes.
+        // Now will detect the states :-
+        if(xhr.readyState === 4){
+            //console.log(this.responseText) // this log will show response of this context or current function. REMEMBER JABHI URL SE RESPOSE AATA HAI VOH "STRING" ME AATA HAI 
+
+            // Now will specifically request followers of user:-
+            const specificData = JSON.parse(this.responseText) // this will give you data in object type before it was in string type.
+            console.log(typeof specificData)
+            console.log(specificData.followers)
+            console.log(this.responseText)
+        }
+    }
+    // Now we have to call open method as voh apne aap me call nahi hota for that :-
+    xhr.send() // now open has been called
+</script>
+</html>
