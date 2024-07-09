@@ -9,30 +9,35 @@
     <div class="card">
         <img src="https://avatars.githubusercontent.com/u/11613311?v=4.png" alt="Avatar" style="width:100%">
         <div class="container">
-          <h4>John Doe</h4>
-          <p>Architect & Engineer</p>
-          <button id="click" style="font-size: 20px;">Click</button>
+            <button id="click" style="font-size: 20px;">Click</button>
+            <p id="followers"></p>
         </div>
-      </div>
-      <style>
+    </div>
+    <style>
         .card {
             /* Add shadows to create the "card" effect */
             width: 500px;
             height: 600px;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
             transition: 0.3s;
-          }
+        }
         .container {
             padding: 2px 16px;
-          }
-          </style>
-          
+        }
+    </style>
 </body>
 <script>
-   // document.querySelector(".card img").setAttribute("src" , `${data.avatar_url}`);
-// document.querySelector("h4").innerHTML = `${data.name} , Followers : ${data.followers}`;
-// document.querySelector("h4").style.fontWeight = `bold`;
-// document.querySelector("p").innerHTML = `${data.bio}  ${data.blog}`
-
+    document.getElementById("click").addEventListener("click", function() {
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                const specificData = JSON.parse(this.responseText);
+                document.getElementById("followers").innerHTML = `Followers: ${specificData.followers}`;
+            }
+        };
+        xhr.send();
+    });
 </script>
 </html>
